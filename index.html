@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZooxStore Payment</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d001f,#4c0070,#8b0000);
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#7b2cff;
+    border-radius:50%;
+    filter:blur(170px);
+    top:-120px;
+    left:-120px;
+    animation:move1 6s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#ff003c;
+    border-radius:50%;
+    filter:blur(170px);
+    bottom:-120px;
+    right:-120px;
+    animation:move2 6s infinite alternate;
+}
+
+@keyframes move1{
+    from{transform:translate(0,0);}
+    to{transform:translate(40px,40px);}
+}
+
+@keyframes move2{
+    from{transform:translate(0,0);}
+    to{transform:translate(-40px,-40px);}
+}
+
+.card{
+    width:360px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    color:#fff;
+    box-shadow:0 0 35px rgba(255,0,80,.4);
+    z-index:10;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(45deg,#7b2cff,#ff003c);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    font-weight:bold;
+    box-shadow:0 0 25px #ff003c;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#fff;
+    margin-bottom:8px;
+}
+
+p{
+    color:#ddd;
+    margin-bottom:25px;
+}
+
+.box{
+    background:rgba(255,255,255,.08);
+    padding:18px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.1);
+    margin-bottom:20px;
+}
+
+.box h2{
+    color:#ff6b9f;
+    margin-bottom:10px;
+}
+
+.nomor{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#7b2cff,#ff003c);
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #ff003c;
+}
+
+.footer{
+    margin-top:20px;
+    color:#ccc;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">Z</div>
+
+<h1>ZOOXSTORE</h1>
+<p>Silakan lakukan pembayaran melalui DANA.</p>
+
+<div class="box">
+<h2>💳 DANA</h2>
+<div class="nomor" id="dana">085668233649</div>
+</div>
+
+<button onclick="copyDana()">📋 Salin Nomor DANA</button>
+
+<div class="footer">
+© 2026 ZooxStore
+</div>
+
+</div>
+
+<script>
+function copyDana(){
+navigator.clipboard.writeText("085668233649");
+alert("Nomor DANA berhasil disalin!");
+}
+</script>
+
+</body>
+</html>
